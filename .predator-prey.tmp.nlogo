@@ -281,7 +281,7 @@ food-growth-time
 food-growth-time
 0
 100
-20.0
+10.0
 1
 1
 NIL
@@ -296,7 +296,7 @@ chance-of-food
 chance-of-food
 0
 1
-0.7
+1.0
 0.01
 1
 NIL
@@ -341,7 +341,7 @@ prey-energy-cap
 prey-energy-cap
 0
 100
-25.0
+30.0
 1
 1
 NIL
@@ -365,7 +365,7 @@ false
 PENS
 "predators" 1.0 0 -955883 true "" "plot count predators"
 "preys" 1.0 0 -6459832 true "" "plot count preys"
-"grass" 1.0 0 -13840069 true "" "plot count patches with [pcolor = green]"
+"pen-2" 1.0 0 -7500403 true "" "plot count patches with [pcolor = green]"
 
 @#$#@#$#@
 ## WHAT IS IT?
