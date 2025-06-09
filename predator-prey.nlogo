@@ -59,7 +59,9 @@ end
 
 to go
   if not any? turtles [ stop ]
-  if ticks >= 500 [ stop ]
+  if count predators = 0 [ stop ]
+  if count preys = 0 [ stop ]
+  if stop-tick-500 and ticks >= 500 [ stop ]
 
   move-prey
   move-predators
@@ -74,7 +76,7 @@ end
 
 to move-predators
   ask predators [
-    set energy energy - 1  ; Cost of movement
+    set energy energy - 2  ; Cost of movement
     right random-float 360
     fd 1
     if energy <= 0 [ die ]  ; Die if no energy
@@ -196,9 +198,9 @@ NIL
 1
 
 BUTTON
-104
+105
 40
-168
+169
 74
 Go
 go
@@ -251,7 +253,7 @@ predator-reproduction-rate-cap
 predator-reproduction-rate-cap
 0
 1
-0.1
+0.15
 0.01
 1
 NIL
@@ -266,7 +268,7 @@ prey-reproduction-rate-cap
 prey-reproduction-rate-cap
 0
 1
-0.2
+0.15
 0.01
 1
 NIL
@@ -296,7 +298,7 @@ chance-of-food
 chance-of-food
 0
 1
-0.7
+1.0
 0.01
 1
 NIL
@@ -326,7 +328,7 @@ predator-energy-cap
 predator-energy-cap
 0
 100
-25.0
+30.0
 1
 1
 NIL
@@ -341,7 +343,7 @@ prey-energy-cap
 prey-energy-cap
 0
 100
-25.0
+30.0
 1
 1
 NIL
@@ -366,6 +368,17 @@ PENS
 "predators" 1.0 0 -955883 true "" "plot count predators"
 "preys" 1.0 0 -6459832 true "" "plot count preys"
 "grass" 1.0 0 -13840069 true "" "plot count patches with [pcolor = green]"
+
+SWITCH
+405
+53
+533
+86
+stop-tick-500
+stop-tick-500
+1
+1
+-1000
 
 @#$#@#$#@
 ## WHAT IS IT?
