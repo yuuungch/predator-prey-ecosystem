@@ -62,6 +62,7 @@ to go
   if count predators = 0 [ stop ]
   if count preys = 0 [ stop ]
   if stop-tick-500 and ticks >= 500 [ stop ]
+  if totalpop and ((count preys = 0) or (count predators = 0) or (count patches with [food-amount > 0] = 0)) [ stop ]
 
   move-prey
   move-predators
@@ -377,6 +378,17 @@ SWITCH
 stop-tick-500
 stop-tick-500
 1
+1
+-1000
+
+SWITCH
+404
+104
+507
+137
+totalpop
+totalpop
+0
 1
 -1000
 
