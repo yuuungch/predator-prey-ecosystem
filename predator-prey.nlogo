@@ -59,8 +59,6 @@ end
 
 to go
   if not any? turtles [ stop ]
-  if count predators = 0 [ stop ]
-  if count preys = 0 [ stop ]
   if stop-tick-500 and ticks >= 500 [ stop ]
   if totalpop and ((count preys = 0) or (count predators = 0) or (count patches with [food-amount > 0] = 0)) [ stop ]
 
